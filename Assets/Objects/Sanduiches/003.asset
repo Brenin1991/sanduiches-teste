@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1870fec1775982c40b03f2b0756b03a8, type: 3}
+  m_Name: 003
+  m_EditorClassIdentifier: 
+  nome: Sanduiche 003
+  icone: {fileID: 21300000, guid: 567dbd53434b5e748b0ab71abd152f37, type: 3}
+  ingredientes:
+  - {fileID: 11400000, guid: 13fce15ee4023a94d8e2bcabad57366e, type: 2}
+  - {fileID: 11400000, guid: 4b07547ec07b950498ebc5d73554c50f, type: 2}
+  - {fileID: 11400000, guid: 45df9503fd0f98f4881bd1913d2d158b, type: 2}
+  - {fileID: 11400000, guid: fdeec7ea43ac629449ef3e962500e325, type: 2}
+  - {fileID: 11400000, guid: 13fce15ee4023a94d8e2bcabad57366e, type: 2}

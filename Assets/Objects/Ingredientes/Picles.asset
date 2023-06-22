@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7218b95a5f21441bf5cc471eb4efca, type: 3}
+  m_Name: Picles
+  m_EditorClassIdentifier: 
+  id: 3
+  nome: Picles
+  icone: {fileID: 21300000, guid: 96085e5b22988f3418d5c736dba65d57, type: 3}
+  model: {fileID: 4676499824959817769, guid: add4ff71cfb308940972f66fbfe5311e, type: 3}
