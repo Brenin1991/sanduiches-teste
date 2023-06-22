@@ -58,6 +58,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private AudioSource clock;
 
+    private int ultimoSanduiche;
+    private int sanduicheAtual;
+
 
 
     void Start(){
@@ -120,10 +123,20 @@ public class GameManager : MonoBehaviour
     }
 
     public void MontarCardapio(){
-        int index = Random.Range(0, 4);
-        sanduicheCardapio = sanduiches[index];
+        sanduicheAtual = Random.Range(0, 4);
+
+        
+
+        while (ultimoSanduiche == sanduicheAtual){
+            sanduicheAtual = Random.Range(0, 4);
+        }
+
+        sanduicheCardapio = sanduiches[sanduicheAtual];
         
         cardapioMontado = true;
+
+        ultimoSanduiche = sanduicheAtual;
+        
     }
 
     public void AdicionaIngrediente(int id){
