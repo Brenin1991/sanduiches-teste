@@ -77,10 +77,11 @@ public class GameManager : MonoBehaviour
     }
 
     void Awake(){
+        //toca o VFX das bolhas
         videoController.PlayVideo();
     }
 
-    // Update is called once per frame
+    // Gameloop
     void Update(){
         if(GetComponent<Timer>().endGame == false){
             Count();
@@ -122,6 +123,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Monta o cardápio aleatório
     public void MontarCardapio(){
         sanduicheAtual = Random.Range(0, 4);
 
@@ -139,6 +141,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    // Jogador adiciona um item ao sanduiche
     public void AdicionaIngrediente(int id){
         if(!stopTime){
             GameObject ingredient;
@@ -152,6 +155,7 @@ public class GameManager : MonoBehaviour
         }        
     }
 
+    // Verifica se a montagem do jogador está de acordo com o sanuiche do cardápio
     private bool VerificarMontagem(){
         for(int i = 0; i < 5; i++){
             if(sanduicheCardapio.ingredientes[i] == sanduicheMontar.ingredientes[i]){
@@ -163,6 +167,7 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
+    // Limpa e reinicia
     private void Limpar(){
         for(int i = 0; i < 5; i++){
             //sanduicheCardapio.ingredientes[i] = null;
@@ -180,6 +185,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    // Adiciona a pontuação ao jogador
     private void AddPontuacao(bool resultado){
         if(canAddPoints){
             if(resultado){
@@ -200,6 +206,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Delay para reiciar
     IEnumerator Restart()
     {
         clock.Stop();
@@ -223,6 +230,7 @@ public class GameManager : MonoBehaviour
         anim.SetFloat("speed", 0.5f);
     }
 
+    // Atualiza a UI
     private void UpdateUI(){
         acertosText.text = "" + acertos;
         errosText.text = "" + erros;
@@ -232,6 +240,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    // Configura os parametros de controles
     private void SetUpControls(){
         for(int i = 0; i < 5; i++){
             GameObject obj;
@@ -248,6 +257,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Instancia o ultimo pão
     IEnumerator SpawnLastBread()
     {
         yield return new WaitForSeconds(0.2f);
@@ -258,16 +268,19 @@ public class GameManager : MonoBehaviour
 
     }
 
+    // Reinicia o jogo
     public void RestartGame(){
         SceneManager.LoadScene(0);
     }
 
+    // Resultado final
     void ResultadoFinal(){
         resultadosText[0].text = "" + acertos;
         resultadosText[1].text = "" + erros;
         resultadosText[2].text = "Final: " + (acertos - erros);
     }
 
+    // Tempo para preparar o sanduiche
     private void Count(){
         if(!stopTime){
             time = time - Time.deltaTime;
